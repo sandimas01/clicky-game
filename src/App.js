@@ -52,7 +52,7 @@ class App extends Component {
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
-      rightWrong: "Glaven!",
+      rightWrong: "Wrong!",
       clicked: []
     });
     this.handleShuffle();
@@ -74,7 +74,11 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
+        <Title>Friends List<br/>
+        score={this.state.currentScore}<br/>
+          topScore={this.state.topScore}<br/>
+          rightWrong={this.state.rightWrong}<br/>
+          </Title>
         {this.state.friends.map(friend => (
           <FriendCard
                   key={friend.id}
